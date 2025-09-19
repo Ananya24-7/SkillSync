@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap | SkillSync</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">SkillSync</div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="roadmap.html" class="active"><i class="fas fa-route"></i> Roadmap</a></li>
+                    <li><a href="community.html"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="#"><i class="fas fa-chart-pie"></i> Gap Analysis</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="roadmap-content">
+            <header class="dashboard-header">
+                <div class="welcome-text">Your Personalized Roadmap</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-comment-dots"></i></a>
+                    <a href="#"><i class="fas fa-user-circle"></i></a>
+                </div>
+            </header>
+
+            <section class="roadmap-grid">
+                <div class="roadmap-visualization" id="roadmap-visualization">
+                    </div>
+                <div class="roadmap-details" id="roadmap-details">
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/roadmap.js"></script>
+</body>
+</html>

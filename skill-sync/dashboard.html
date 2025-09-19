@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SkillSync</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">SkillSync</div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="roadmap.html"><i class="fas fa-route"></i> Roadmap</a></li>
+                    <li><a href="community.html"><i class="fas fa-users"></i> Community</a></li>
+                    <li><a href="#"><i class="fas fa-chart-pie"></i> Gap Analysis</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="welcome-text">Welcome, User</div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-comment-dots"></i></a>
+                    <a href="#"><i class="fas fa-user-circle"></i></a>
+                </div>
+            </header>
+
+            <section class="dashboard-grid" id="dashboard-grid">
+
+                <div class="grid-item resume-upload-area" id="resume-upload-section">
+                    <h2>Upload Your Resume</h2>
+                    <div class="form-group">
+                        <label for="role-select">Select Your Dream Role:</label>
+                        <select id="role-select" class="form-control">
+                        </select>
+                    </div>
+                    <div id="drag-drop-area" class="drag-drop-box">
+                        <i class="fas fa-cloud-upload-alt fa-3x"></i>
+                        <p>Drag & Drop your resume here</p>
+                        <p>or <span class="browse-link" id="browse-link">Browse to upload</span></p>
+                        <input type="file" id="file-input" hidden accept=".pdf,.doc,.docx">
+                    </div>
+                    <button class="btn" id="upload-file-btn">Analyze My Skills</button>
+                    <p class="loading-message hidden" id="loading-message">Analyzing your resume...</p>
+                </div>
+
+                <div class="grid-item ai-twin-area">
+                    <h2>Your AI Career Twin</h2>
+                    <div id="ai-twin-chat-container">
+                        <div id="ai-twin-message">
+                            <p>Hi! I'm your AI Career Twin. Upload your resume and I'll give you a personalized goal for the week!</p>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" id="chat-input" placeholder="Ask me about your roadmap...">
+                            <button id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item gamification-area">
+                    <h2>Gamified Progress</h2>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="skill-coins-bar" style="width: 0%;"></div>
+                    </div>
+                    <p><span id="skill-coins-value">0</span> SkillCoins Earned</p>
+                    <button class="btn btn-secondary" id="claim-reward-btn">Claim Your Reward</button>
+                </div>
+
+                <div class="grid-item missing-skills-area">
+                    <h2>Top Missing Skills</h2>
+                    <div class="list-placeholder" id="missing-skills-placeholder">
+                        <p class="initial-message">Upload your resume to see your skill gaps.</p>
+                    </div>
+                </div>
+                
+                <div class="grid-item validation-area">
+                    <h2>Skill Validation</h2>
+                    <div class="validation-buttons">
+                        <button class="btn btn-primary" id="start-assessment-btn">Start AI Assessment</button>
+                        <button class="btn btn-secondary" id="upload-github-btn">Upload GitHub Project</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gap-analysis-section hidden" id="gap-analysis-results">
+                <div id="results" class="results-grid">
+                    <div class="card full-width">
+                        <h2 id="comparisonTitle"></h2>
+                        <ul id="comparisonList"></ul>
+                    </div>
+                    <div class="card chart-card"><h2>Readiness %</h2><canvas id="pieChart"></canvas></div>
+                    <div class="card chart-card"><h2>Skill Comparison</h2><canvas id="radarChart"></canvas></div>
+                    <div class="card full-width" id="recommendations"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/analysis.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
